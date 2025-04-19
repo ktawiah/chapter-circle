@@ -1,14 +1,17 @@
 package dev.practice.booksocialnetwork.model;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.security.auth.Subject;
 import java.security.Principal;
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
@@ -31,6 +34,8 @@ public class User extends Auditable implements UserDetails, Principal {
 
     @Column(unique = true)
     private String email;
+
+    private LocalDateTime dateOfBirth;
 
     private String password;
 
