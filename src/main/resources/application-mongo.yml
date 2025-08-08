@@ -1,0 +1,18 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/chaptercircle
+
+googlebooks:
+  apiKey: ${GOOGLE_BOOKS_API_KEY:}
+  baseUrl: https://www.googleapis.com/books/v1
+  scheduler:
+    enabled: false
+    cron: "0 0 * * * *"
+    query: "subject:fiction"
+    batchSize: 500
+
+sentiment:
+  engine: simple
+  nltk:
+    url: http://localhost:5001/sentiment
